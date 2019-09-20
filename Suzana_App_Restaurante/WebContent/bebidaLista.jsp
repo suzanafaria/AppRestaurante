@@ -13,17 +13,15 @@
 	<%List<Bebida> listaBebidas = (List<Bebida>) request.getAttribute("bebidas");%>
 
 	<div class="container">
-		<div class="container">
 		<div class="panel-group">
 			<div class="panel panel-default">
 			<c:import url="cabecalho.jsp"/>
-		   	 <div class="panel-body">
-				<h1>Lista de Bebidas:</h1>
-			</div>
 			</div>
 	   <div class="panel panel-default">
 	   <div class="panel-body">
-		<form action="produtoCadastro.jsp">
+			<h3><b>Lista de Bebidas:</b></h3>
+			<br>
+		<form action="ProdutoController">
 			<button type="submit" class="btn btn-default">Cadastrar Bebida</button>
 		</form>
 
@@ -64,7 +62,7 @@
 	</div>
 	</div>
 	</div>
-	</div>
+
 
 </body>
 </html>

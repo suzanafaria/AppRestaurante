@@ -12,22 +12,18 @@
 <body>
 	<%List<Sobremesa> listaSobremesas = (List<Sobremesa>) request.getAttribute("sobremesas");%>
 
-	<h1>Lista de Sobremesas</h1>
-
 	<div class="container">
 		<div class="panel-group">
 			<div class="panel panel-default">
 			<c:import url="cabecalho.jsp"/>
-		   	 <div class="panel-body">
-				<h1>Lista de Sobremesas:</h1>
-			</div>
 			</div>
 	   <div class="panel panel-default">
 	   <div class="panel-body">
-
-		<form action="produtoCadastro.jsp">
-			<button type="submit" class="btn btn-default">Cadastrar Sobremesa</button>
-		</form>
+			<h3><b>Lista de Sobremesas:</b></h3>
+			<br>
+			<form action="ProdutoController">
+				<button type="submit" class="btn btn-default">Cadastrar Sobremesa</button>
+			</form>
 
 		<hr>
 
@@ -59,7 +55,7 @@
 			</tbody>
 		</table>
 		<%} else {%>
-		<p>Ainda não existe nenhum funcionário cadastrado!</p>
+		<p>Ainda não existe nenhuma sobremesa cadastrada!</p>
 		<%}%>
 		
 	</div>

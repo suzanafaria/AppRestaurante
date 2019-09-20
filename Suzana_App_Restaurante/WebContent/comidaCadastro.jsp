@@ -30,16 +30,16 @@
 						
 			<div class="form-group">
 				<label for="codigo">Código do Produto:</label> <input type="text"
-					class="form-control" id="codigo" value="<%=comida.getCodigo()%> name="codigo" readonly="readonly">
+					class="form-control" id="codigo" value="<%=comida.getCodigo()%>" name="codigo" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome do Produto:</label> <input type="text"
-					class="form-control" id="nome" value="<%=comida.getNome()%> name="nome" readonly="readonly">
+					class="form-control" id="nome" value="<%=comida.getNome()%>" name="nome" readonly="readonly">
 			</div>
 			
 			<div class="form-group">
 				<label for="preco">Preço do Produto:</label> <input type="text"
-					class="form-control" id="preco" value="<%=comida.getPreco()%> name="preco" readonly="readonly">
+					class="form-control" id="preco" value="<%=comida.getPreco()%>" name="preco" readonly="readonly">
 			</div>
 			
 		  	<div class="form-group">

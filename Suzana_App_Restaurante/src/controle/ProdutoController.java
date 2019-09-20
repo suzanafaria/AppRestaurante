@@ -26,8 +26,7 @@ public class ProdutoController extends HttpServlet {
 			request.getRequestDispatcher("produtoCadastro.jsp").forward(request, response);
 		} else {
 			request.setAttribute("produtos", ProdutoDao.obterLista());
-			
-			request.getRequestDispatcher("produtoLista.jsp").forward(request, response);
+			request.getRequestDispatcher("produtoCadastro.jsp").forward(request, response);
 		}
 			
 		

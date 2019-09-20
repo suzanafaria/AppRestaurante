@@ -18,37 +18,40 @@
 	List<Restaurante> lista = (List<Restaurante>)request.getAttribute("restaurantes");
 	%>
 
-<div class="container">
-<div class="panel-group">
-<div class="panel panel-default">
-	<c:import url="cabecalho.jsp"/>
-   
-   	<div class="panel-body">
-	  <div class="btn-group btn-group-justified">
-	    <div class="btn-group">
-			<form action="FuncionarioController">
-				<button type="submit" class="btn btn-default">Funcionário</button>
-			</form>
-	    </div>
-	    <div class="btn-group">
-			<form action="BebidaController">
-				<button type="submit" class="btn btn-default">Bebida</button>
-			</form>
-	    </div>
-	    <div class="btn-group">
-			<form action="ComidaController">
-				<button type="submit" class="btn btn-default">Comida</button>
-			</form>
-	    </div>
-	    <div class="btn-group">
-			<form action="SobremesaController">
-				<button type="submit" class="btn btn-default">Sobremesa</button>
-			</form>
-	    </div>
-	  </div>
+	<div class="container">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<c:import url="cabecalho.jsp" />
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="panel-body">
+						<div class="btn btn-block">
+							<div class="btn-group">
+								<form action="funcionarioLista.jsp">
+									<button type="submit" class="btn btn-default">Funcionário</button>
+								</form>
+							</div>
+							<div class="btn-group">
+								<form action="bebidaLista.jsp">
+									<button type="submit" class="btn btn-default">Bebida</button>
+								</form>
+							</div>
+							<div class="btn-group">
+								<form action="comidaLista.jsp">
+									<button type="submit" class="btn btn-default">Comida</button>
+								</form>
+							</div>
+							<div class="btn-group">
+								<form action="sobremesaLista.jsp">
+									<button type="submit" class="btn btn-default">Sobremesa</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
-</div>
 </body>
 </html>

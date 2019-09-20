@@ -16,13 +16,12 @@
 		<div class="panel-group">
 			<div class="panel panel-default">
 			<c:import url="cabecalho.jsp"/>
-		   	 <div class="panel-body">
-				<h1>Lista de Comidas:</h1>
-			</div>
 			</div>
 	   <div class="panel panel-default">
 	   <div class="panel-body">
-		<form action="comidaCadastro.jsp">
+			<h3><b>Lista de Comidas:</b></h3>
+			<br>
+		<form action="ProdutoController">
 			<button type="submit" class="btn btn-default">Cadastrar Comida</button>
 		</form>
 
@@ -56,7 +55,7 @@
 			</tbody>
 		</table>
 		<%} else {%>
-		<p>Ainda não existe nenhum funcionário cadastrado!</p>
+		<p>Ainda não existe nenhuma comida cadastrada!</p>
 		<%}%>
 		
 	</div>

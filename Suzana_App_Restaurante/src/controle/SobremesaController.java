@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BebidaDao;
 import dao.SobremesaDao;
 import negocio.Sobremesa;
 
@@ -22,7 +21,7 @@ public class SobremesaController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("sobremesas", BebidaDao.obterLista());
+		request.setAttribute("sobremesas", SobremesaDao.obterLista());
 		request.getRequestDispatcher("sobremesaLista.jsp").forward(request, response);
 	}
 

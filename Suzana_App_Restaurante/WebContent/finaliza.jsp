@@ -14,27 +14,29 @@
 	String mensagem = (String)request.getAttribute("mensagem");
 	String controller = (String)request.getAttribute("controller");
 	%>
-<div class="container">
-<div class="panel-group">
-<div class="panel panel-default">
-<div class="panel-heading">
-	<c:import url="cabecalho.jsp"/>
+	
+	<div class="container">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<c:import url="cabecalho.jsp" />
 
-	<form action="<%=controller%>">
-		<button type="submit" class="btn btn-link">Voltar</button>
-	</form>
-   </div>
-   
-   	<div class="panel-body">
-	  <div class="btn-group btn-group-justified">
-		  <h2><%=titulo%></h2>
-		  <div class="alert alert-success">
-		    <strong>Cadastro realizado com sucesso!</strong> <%=mensagem%>
-		  </div>
-	  </div>
+					<form action="<%=controller%>">
+						<button type="submit" class="btn btn-link">Voltar</button>
+					</form>
+				</div>
+
+				<div class="panel-body">
+					<div class="btn-group btn-group-justified">
+						<h2><%=titulo%></h2>
+						<div class="alert alert-success">
+							<strong>Cadastro realizado com sucesso!</strong>
+							<%=mensagem%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
-</div>
 </body>
 </html>

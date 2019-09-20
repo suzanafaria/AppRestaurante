@@ -1,8 +1,8 @@
 <%@page import="negocio.Bebida"%>
 <%@page import="modelo.Produto"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +13,16 @@
 	<%List<Produto> listaProdutos= (List<Produto>) request.getAttribute("produtos");%>
 	<%String login = (String)request.getAttribute("usuarioLogado");%>
 
-	<h1>Lista de Produtos</h1>
-
 	<div class="container">
-
-		<form action="ProdutoController" method="get">
+		<div class="panel-group">
+			<div class="panel panel-default">
+			<c:import url="cabecalho.jsp"/>
+			</div>
+	   <div class="panel panel-default">
+	   <div class="panel-body">
+			<h3><b>Lista de Produtos:</b></h3>
+			<br>
+			<form action="ProdutoController" method="get">
 			<input type="hidden" name="operacao" value="new">
 			<button type="submit" class="btn btn-default">Novo Produto</button>
 		</form>
@@ -51,6 +56,9 @@
 		<p>Ainda não existe nenhuma bebida cadastrada!</p>
 		<%}%>
 		
+	</div>
+	</div>
+	</div>
 	</div>
 
 </body>

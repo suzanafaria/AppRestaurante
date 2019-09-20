@@ -22,16 +22,16 @@
 		<form action="BebidaController" method="post">
 			<div class="form-group">
 				<label for="codigo">Código do Produto:</label> <input type="text"
-					class="form-control" id="codigo" value="<%=bebida.getCodigo()%> name="codigo" readonly="readonly">
+					class="form-control" id="codigo" value="<%=bebida.getCodigo()%>" name="codigo" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome do Produto:</label> <input type="text"
-					class="form-control" id="nome" value="<%=bebida.getNome()%> name="nome" readonly="readonly">
+					class="form-control" id="nome" value="<%=bebida.getNome()%>" name="nome" readonly="readonly">
 			</div>
 			
 			<div class="form-group">
 				<label for="preco">Preço do Produto:</label> <input type="text"
-					class="form-control" id="preco" value="<%=bebida.getPreco()%> name="preco" readonly="readonly">
+					class="form-control" id="preco" value="<%=bebida.getPreco()%>" name="preco" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="marca">Marca:</label> <input type="text"

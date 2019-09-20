@@ -11,17 +11,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	
+<style>
+div.a {
+	text-align: center;
+}
+</style>
+
 	<% Usuario usuario = (Usuario)session.getAttribute("usuarioLogado");%>
+
 	<div class="container">
 	<div class="panel-heading">
-		<h2>AppRestaurante: Sistema de Cadastro</h2>
-		<h3>Olá <%=usuario.getNome() %></h3>
+	<div class="a">
+		<h2><b>AppRestaurante: Sistema de Cadastro</b></h2>
+	</div>	
+	<hr />
+		<h4> Olá <%=usuario.getNome() %> </h4>
+
 		<form action="login.jsp">
-		   		<button type="submit" class="btn btn-link">Sair</button>
+		   		<button type="submit" class="btn btn-warning">Sair</button>
 		</form>
-	
 	</div>
 	</div>
 </body>

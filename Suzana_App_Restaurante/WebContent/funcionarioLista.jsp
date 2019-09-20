@@ -21,17 +21,14 @@
 		<div class="panel-group">
 			<div class="panel panel-default">
 			<c:import url="cabecalho.jsp"/>
-		   	 <div class="panel-body">
-				<h1>Lista de Funcionários:</h1>
-			</div>
 			</div>
 	   <div class="panel panel-default">
 	   <div class="panel-body">
-
-		<form action="funcionarioCadastro.jsp">
-			<button type="submit" class="btn btn-default">Cadastrar
-				Funcionário</button>
-		</form>
+			<h3><b>Lista de Funcionários:</b></h3>
+			<br>
+			<form action="funcionarioCadastro.jsp">
+				<button type="submit" class="btn btn-default">Cadastrar Funcionário</button>
+			</form>
 
 		<hr>
 
