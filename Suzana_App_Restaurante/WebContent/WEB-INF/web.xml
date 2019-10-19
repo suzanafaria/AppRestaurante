@@ -6,16 +6,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>FuncionarioController</display-name>
-    <servlet-name>FuncionarioController</servlet-name>
-    <servlet-class>controle.FuncionarioController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>FuncionarioController</servlet-name>
-    <url-pattern>/FuncionarioController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>BebidaController</display-name>
     <servlet-name>BebidaController</servlet-name>
     <servlet-class>controle.BebidaController</servlet-class>
@@ -73,5 +63,65 @@
   <servlet-mapping>
     <servlet-name>UsuarioController</servlet-name>
     <url-pattern>/UsuarioController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GerenteController</display-name>
+    <servlet-name>GerenteController</servlet-name>
+    <servlet-class>controle.GerenteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GerenteController</servlet-name>
+    <url-pattern>/GerenteController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GerenteRestaurante</display-name>
+    <servlet-name>GerenteRestaurante</servlet-name>
+    <servlet-class>controle.GerenteRestaurante</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GerenteRestaurante</servlet-name>
+    <url-pattern>/GerenteRestaurante</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GerenteRestauranteController</display-name>
+    <servlet-name>GerenteRestauranteController</servlet-name>
+    <servlet-class>controle.GerenteRestauranteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GerenteRestauranteController</servlet-name>
+    <url-pattern>/GerenteRestauranteController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProdutoRestauranteController</display-name>
+    <servlet-name>ProdutoRestauranteController</servlet-name>
+    <servlet-class>controle.ProdutoRestauranteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProdutoRestauranteController</servlet-name>
+    <url-pattern>/ProdutoRestauranteController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConsultaRestauranteController</display-name>
+    <servlet-name>ConsultaRestauranteController</servlet-name>
+    <servlet-class>controle.ConsultaRestauranteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConsultaRestauranteController</servlet-name>
+    <url-pattern>/ConsultaRestauranteController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExclusaoRestauranteController</display-name>
+    <servlet-name>ExclusaoRestauranteController</servlet-name>
+    <servlet-class>controle.ExclusaoRestauranteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExclusaoRestauranteController</servlet-name>
+    <url-pattern>/ExclusaoRestauranteController</url-pattern>
   </servlet-mapping>
 </web-app>

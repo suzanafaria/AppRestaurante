@@ -14,6 +14,10 @@ public abstract class Produto {
 	
 	public Produto() {};
 	
+	public Produto(int id) {
+		this.id=id;
+	}
+	
 	public Produto(int id, String codigo, String nome, float preco) {
 		this(codigo, nome, preco);
 		this.id=id;

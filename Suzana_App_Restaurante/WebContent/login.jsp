@@ -1,3 +1,4 @@
+<%@page import="negocio.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,7 @@
 	if (request.getAttribute("invalido") != null){
 		invalido = (Boolean)request.getAttribute("invalido");
 	}
+	
 	%>
 
  <div class="container">
@@ -32,12 +34,12 @@
 	<form action="UsuarioController" method="post">
 	    <div class="form-group">
 	      <label for="email">Email:</label>
-	      <input type="email" class="form-control" id="email" placeholder="Entre com o seu e-mail" name="email">
+	      <input type="email" class="form-control" id="email" value="suzana@gmail.com" name="email">
 	    </div>
 	    
 	    <div class="form-group">
 	      <label for="senha">Senha:</label>
-	      <input type="password" class="form-control" id="senha" placeholder="Entre com a sua senha" name="senha">
+	      <input type="password" class="form-control" id="senha" value="123" name="senha">
 	    </div>
 	    
 	    <button type="submit" class="btn btn-default">Ok</button>

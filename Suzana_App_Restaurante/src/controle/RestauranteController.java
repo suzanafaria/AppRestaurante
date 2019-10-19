@@ -1,38 +1,46 @@
 package controle;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class RestauranteController
- */
+import dao.RestauranteDao;
+import negocio.Restaurante;
+
+
 public class RestauranteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
     public RestauranteController() {
-        // TODO Auto-generated constructor stub
+    
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		if(request.getParameter("operacao") != null) {
+			request.getRequestDispatcher("restauranteCadastro.jsp").forward(request, response);
+		} else {	
+			request.setAttribute("restaurantes", RestauranteDao.obterLista());
+			request.getRequestDispatcher("main.jsp").forward(request, response);
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		Restaurante restaurante = new Restaurante(
+				request.getParameter("nome"),
+				request.getParameter("categoria"),
+				request.getParameter("localizacaoBairro")
+				);
+		
+		RestauranteDao.incluir(restaurante);
+		
+		request.setAttribute("mensagem", "Cadastro realizado com sucesso "+restaurante.toString());
+		request.setAttribute("titulo", "Restaurante");
+		request.setAttribute("controller", "RestauranteController");
+		request.getRequestDispatcher("finaliza.jsp").forward(request, response);
 	}
-
 }

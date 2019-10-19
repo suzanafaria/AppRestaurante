@@ -9,6 +9,7 @@ public class Bebida extends Produto {
 	public Bebida() {
 		super();
 	};
+
 	
 	public Bebida(String codigo, String nome, float preco) {
 		super(codigo, nome, preco);
@@ -18,12 +19,17 @@ public class Bebida extends Produto {
 		super(id, codigo, nome, preco);
 		this.setMarca(marca);
 		this.setTamanho(tamanho);
-		this.setAlcoolica(alcoolica);
-			
+		this.setAlcoolica(alcoolica);	
 	}
 	
-
-
+	public Bebida(String codigo, String nome, float preco, String marca, String tamanho, boolean alcoolica) {
+		this(codigo, nome, preco);
+		this.setMarca(marca);
+		this.setTamanho(tamanho);
+		this.setAlcoolica(alcoolica);	
+	}
+	
+	
 	public String getMarca() {
 		return marca;
 	}

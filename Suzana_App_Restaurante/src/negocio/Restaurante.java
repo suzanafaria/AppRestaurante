@@ -1,22 +1,43 @@
 package negocio;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 import auxiliar.Constante;
 import modelo.Produto;
 
 public class Restaurante {
+	
+	private int id;
 	private String nome;
 	private String categoria;
 	private String localizacaoBairro;
-	private Funcionario funcionario;
-	private ArrayList<Produto> produtos;
+	private Gerente gerente;
+	private Set<Produto> produtos;
 	private int[] qtdeProdutos;
 	
-	public Restaurante() {
-		produtos = new ArrayList<Produto>();
+	
+	public Restaurante(String nome, String categoria, String localizacaoBairro) {
+		this.nome = nome;
+		this.categoria = categoria;
+		this.localizacaoBairro = localizacaoBairro;
 	}
 	
+	
+	public Restaurante(int id, String nome, String categoria, String localizacaoBairro) {
+		this(nome, categoria, localizacaoBairro);
+		this.id = id;
+	}
+
+
+	public Restaurante(int id, String nome, String categoria, String localizacaoBairro, Gerente gerente,
+			Set<Produto> produtos) {
+		this(id, nome, categoria, localizacaoBairro);
+		this.gerente= gerente;
+		this.setProdutos(produtos);
+		this.setId(id);
+	}
+
+
 	public String getNome() {
 		return nome;
 	}
@@ -35,23 +56,33 @@ public class Restaurante {
 	public void setLocalizacaoBairro(String localizacaoBairro) {
 		this.localizacaoBairro = localizacaoBairro;
 	}
-	public ArrayList<Produto> getProdutos() {
+	public Set<Produto> getProdutos() {
 		return produtos;
 	}
-	public void setProdutos(ArrayList<Produto> produtos) {
+	public void setProdutos(Set<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Gerente getGerente() {
+		return gerente;
+	}
+	public void setGerente(Gerente gerente) {
+		this.gerente = gerente;
+	}
+	
 	public void exibir() {
 		if (this.validar()) {
 			qtdeProdutos = new int[Constante.PRODUTOS.length];
 			System.out.println("Dados Restaurante: \n" + this);
-			System.out.println("Dados Funcionario: \n" + this.funcionario);		
-//			System.out.println("Dados Refeicao:");
-			for(Produto item: this.produtos) {
-				item.toString();
-				System.out.println(item);
-			}
+			System.out.println("Dados Funcionario: \n" + this.gerente);		
+
+			
 			for(Produto p : this.produtos) {
 				this.contabiliza(p);
 				
@@ -67,10 +98,11 @@ public class Restaurante {
 	
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %s", 
+		return String.format("%s - %s - %s;\nGerente: %s", 
 				this.nome, 
 				this.categoria,
-				this.localizacaoBairro);
+				this.localizacaoBairro,
+				this.getGerente());
 	}
 	
 	
@@ -98,21 +130,16 @@ public class Restaurante {
 		}
 	}
 
-	public void associa(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void associa(Gerente gerente) {
+		this.gerente = gerente;
 	}
 	
-	public void adiciona(Produto refeicao) {
-		this.getProdutos().add(refeicao);
+	public void adiciona(Produto produto) {
+		this.getProdutos().add(produto);
 	}
 
+
 	
-	
-//	public void fazerReserva(){
-//		//contactar o Responsavel pelo restaurante
-//	}	
-//	public void montarRefeicao(){ 
-//		// comida + bebida
-//	}
+
 	
 }

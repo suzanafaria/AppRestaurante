@@ -13,26 +13,28 @@
 
 </head>
 <body>
-	<%
-	Sobremesa sobremesa = (Sobremesa)session.getAttribute("newSobremesa");
-	%>
+
 	<div class="container">
 
 				<h1>Cadastro de Sobremesa:</h1>
 
+		<form action="SobremesaController">
+			<button type="submit" class="btn btn-default">Voltar</button>
+		</form>
+
 		<form action="SobremesaController" method="post">
 			<div class="form-group">
 				<label for="codigo">Código do Produto:</label> <input type="text"
-					class="form-control" id="codigo" value="<%=sobremesa.getCodigo()%>" name="codigo" readonly="readonly">
+					class="form-control" id="codigo" name="codigo">
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome do Produto:</label> <input type="text"
-					class="form-control" id="nome" value="<%=sobremesa.getNome()%>" name="nome" readonly="readonly">
+					class="form-control" id="nome" name="nome">
 			</div>
 			
 			<div class="form-group">
 				<label for="preco">Preço do Produto:</label> <input type="text"
-					class="form-control" id="preco" value="<%=sobremesa.getPreco()%>" name="preco" readonly="readonly">
+					class="form-control" id="preco" name="preco">
 			</div>
 			<div class="checkbox">
 				<label for="sobremesaFria">

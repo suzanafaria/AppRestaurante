@@ -3,8 +3,8 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import conexao.Conexao;
 import modelo.Produto;
@@ -39,8 +39,8 @@ public class BebidaDao {
 		return null;
 	}	
 	
-	public static List<Bebida> obterLista(){
-		List<Bebida> listaBebidas = new ArrayList<Bebida>();
+	public static Set<Bebida> obterLista(){
+		Set<Bebida> listaBebidas = new HashSet<Bebida>();
 		
 		String sql = "SELECT b.idProduto, b.marca, b.tamanho, b.alcoolica, p.codigo, p.nome, p.preco FROM bdrestaurante.tbebida b Inner join bdrestaurante.tproduto p on b.idProduto = p.id ORDER BY p.nome;";
 		
@@ -66,5 +66,53 @@ public class BebidaDao {
 			e.printStackTrace();
 		}
 		return listaBebidas;
+	}
+	
+	public static boolean excluir(int id) {
+		try {
+			ProdutoDao.excluir(id);
+			
+			PreparedStatement ps = 
+					Conexao.obterConexao().prepareStatement(
+							"DELETE FROM TBebida WHERE idProduto = ?"
+						);
+			
+			ps.setInt(1, id);
+			ps.execute();
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public static Bebida obterPorId(int id){
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(
+					"SELECT * FROM TBebida B INNER JOIN TPRODUTO P ON P.ID = B.IDPRODUTO "
+					+ "WHERE P.ID = ?"
+					);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()){
+				return new Bebida(
+						rs.getInt("idProduto"), 
+						rs.getString("codigo"), 
+						rs.getString("nome"), 
+						rs.getFloat("preco"),
+						rs.getString("marca"), 
+						rs.getString("tamanho"), 
+						rs.getBoolean("alcoolica")
+					);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 }

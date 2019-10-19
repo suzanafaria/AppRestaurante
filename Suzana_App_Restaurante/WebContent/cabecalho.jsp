@@ -24,10 +24,10 @@ div.a {
 	<div class="container">
 	<div class="panel-heading">
 	<div class="a">
-		<h2><b>AppRestaurante: Sistema de Cadastro</b></h2>
+		<h3><b>AppRestaurante: Sistema de Cadastro</b></h3>
 	</div>	
 	<hr />
-		<h4> Olá <%=usuario.getNome() %> </h4>
+		<h4> Olá, <%=usuario.getNome() %>! </h4>
 
 		<form action="login.jsp">
 		   		<button type="submit" class="btn btn-warning">Sair</button>

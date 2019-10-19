@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AppRestaurante - FuncionarioCadastro</title>
+<title>AppRestaurante - GerenteCadastro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -12,10 +12,14 @@
 </head>
 <body>
  	<div class="container">
-
-				<h1>Cadastro de Funcionários:</h1>
-
-		<form action="FuncionarioController" method="post">
+	
+				<h1>Cadastro de Gerentes:</h1>
+		
+		<form action="GerenteController">
+				<button type="submit" class="btn btn-default">Voltar</button>
+		</form>
+		
+		<form action=""GerenteController"" method="post">
 			<div class="form-group">
 				<label for="nome">Nome:</label> <input type="text"
 					class="form-control" id="nome" placeholder="Entre com o nome"

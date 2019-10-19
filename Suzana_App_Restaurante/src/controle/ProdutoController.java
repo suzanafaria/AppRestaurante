@@ -21,14 +21,12 @@ public class ProdutoController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		if(request.getParameter("operacao") != null) {
 			request.getRequestDispatcher("produtoCadastro.jsp").forward(request, response);
 		} else {
 			request.setAttribute("produtos", ProdutoDao.obterLista());
 			request.getRequestDispatcher("produtoCadastro.jsp").forward(request, response);
 		}
-			
 		
 	}
 

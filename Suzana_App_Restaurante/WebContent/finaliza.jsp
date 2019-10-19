@@ -30,8 +30,8 @@
 					<div class="btn-group btn-group-justified">
 						<h2><%=titulo%></h2>
 						<div class="alert alert-success">
-							<strong>Cadastro realizado com sucesso!</strong>
-							<%=mensagem%>
+							<strong><%=mensagem%></strong>
+							
 						</div>
 					</div>
 				</div>

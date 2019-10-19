@@ -6,21 +6,24 @@ public class Comida extends Produto {
 	private boolean serveDuasPessoas;
 	private boolean acompanhamentoExtra;
 
-	public Comida() {
-		super();
-	}
+	
 	
 	public Comida(String codigo, String nome, float preco) {
 		super(codigo, nome, preco);	
 	}
 	
-	
 	public Comida(int id, String codigo, String nome, float preco, String tipo, boolean serveDuasPessoas, boolean acompanhamentoExtra) {
 		super(id, codigo, nome, preco);
 		this.setTipo(tipo);
 		this.setServeDuasPessoas(serveDuasPessoas);
-		this.setAcompanhamentoExtra(acompanhamentoExtra);
-			
+		this.setAcompanhamentoExtra(acompanhamentoExtra);	
+	}
+	
+	public Comida(String codigo, String nome, float preco, String tipo, boolean serveDuasPessoas, boolean acompanhamentoExtra) {
+		this(codigo, nome, preco);
+		this.setTipo(tipo);
+		this.setServeDuasPessoas(serveDuasPessoas);
+		this.setAcompanhamentoExtra(acompanhamentoExtra);	
 	}
 	
 	
@@ -53,7 +56,7 @@ public class Comida extends Produto {
 		return String.format("%s;%s;%s;%s", 
 				super.toString(),
 				this.tipo,
-				acompanhamentoExtra ? "Adicionado acompanhamento extra" : "Não adicionado acompanhamento extra",
+				acompanhamentoExtra ? "Tem acompanhamento extra" : "Não tem acompanhamento extra",
 				this.serveDuasPessoas ? "Sim" : "Não");
 	}
 	

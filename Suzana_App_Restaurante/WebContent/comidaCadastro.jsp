@@ -17,29 +17,27 @@
 </head>
 <body>
 
-	<%
-	Comida comida = (Comida)session.getAttribute("newComida");
-	%>
-
 	<div class="container">
 
 				<h1>Cadastro de Comida:</h1>
 			
-
+			<form action="ComidaController">
+				<button type="submit" class="btn btn-default">Voltar</button>
+			</form>
 			<form action="ComidaController" method="post">
 						
 			<div class="form-group">
 				<label for="codigo">Código do Produto:</label> <input type="text"
-					class="form-control" id="codigo" value="<%=comida.getCodigo()%>" name="codigo" readonly="readonly">
+					class="form-control" id="codigo" name="codigo">
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome do Produto:</label> <input type="text"
-					class="form-control" id="nome" value="<%=comida.getNome()%>" name="nome" readonly="readonly">
+					class="form-control" id="nome" name="nome">
 			</div>
 			
 			<div class="form-group">
 				<label for="preco">Preço do Produto:</label> <input type="text"
-					class="form-control" id="preco" value="<%=comida.getPreco()%>" name="preco" readonly="readonly">
+					class="form-control" id="preco" name="preco">
 			</div>
 			
 		  	<div class="form-group">

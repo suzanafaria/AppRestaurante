@@ -4,8 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import conexao.Conexao;
 import modelo.Produto;
@@ -43,9 +43,8 @@ public class ProdutoDao {
 	}
 
 	
-	
-	public static List<Produto> obterLista() {
-		List<Produto> lista = new ArrayList<Produto>();
+	public static Set<Produto> obterLista() {
+		Set<Produto> lista = new HashSet<Produto>();
 		
 		lista.addAll(BebidaDao.obterLista());
 		lista.addAll(ComidaDao.obterLista());
@@ -53,4 +52,58 @@ public class ProdutoDao {
 		
 		return lista;
 	}
+	
+	public static Produto obterPorId(int id){
+		
+		Produto produto = BebidaDao.obterPorId(id); 			
+		
+		if(produto == null) {
+			produto = ComidaDao.obterPorId(id);
+			
+			if(produto == null) {
+				produto = SobremesaDao.obterPorId(id);							
+			}
+		}
+	
+		return produto;
+	}
+	
+	public static boolean excluir(int id) {
+		try {
+			PreparedStatement ps = 
+					Conexao.obterConexao().prepareStatement(
+							"DELETE FROM TProduto WHERE id = ?"
+						);
+			
+			ps.setInt(1, id);
+			ps.execute();
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public static Set<Produto> obterListaPorRestaurante(int idRestaurante){
+		Set<Produto> lista = new HashSet<Produto>();
+
+		String sql = "SELECT * FROM TRestauranteProduto where idRestaurante = ?";
+		
+		try {
+			PreparedStatement ps = Conexao.obterConexao().prepareStatement(sql);
+			ps.setInt(1, idRestaurante);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				lista.add(
+						obterPorId(rs.getInt("idProduto"))						
+					);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lista;
+	}	
+	
 }

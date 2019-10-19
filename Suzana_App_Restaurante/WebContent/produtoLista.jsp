@@ -20,11 +20,11 @@
 			</div>
 	   <div class="panel panel-default">
 	   <div class="panel-body">
-			<h3><b>Lista de Produtos:</b></h3>
+			<h4><b>Produtos:</b></h4>
 			<br>
 			<form action="ProdutoController" method="get">
 			<input type="hidden" name="operacao" value="new">
-			<button type="submit" class="btn btn-default">Novo Produto</button>
+			<button type="submit" class="btn btn-default">Novo</button>
 		</form>
 
 		<hr>
@@ -37,6 +37,8 @@
 					<th>Nome</th>
 					<th>Preco</th>
 					<th>Tipo</th>
+					<th>Alterar</th>
+					<th>Excluir</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,7 +48,12 @@
 					<td><%=item.getCodigo()%></td>
 					<td><%=item.getNome()%></td>
 					<td><%=item.getPreco()%></td>		
-					<td><%=item.obterTipo()%></td>		
+					<td><%=item.obterTipo()%></td>
+					<td> Alterar</td>
+					<form action="ProdutoController" method="get">
+						<input type="hidden" name="idProduto" value="<%=item.getId()%>">
+						<td><button type="submit" class="btn btn-default">Excluir</button></td>
+					</form>		
 				</tr>
 				<%}%>
 

@@ -1,20 +1,22 @@
 package negocio;
 
-public class Funcionario {
+public class Gerente {
 	private int id;
 	private String nome;
 	private String email;
 	private String telefone;
 	
-	public Funcionario() {};
+	public Gerente(int id) {
+		this.id=id;
+	};
 	
-	public Funcionario(String nome, String email, String telefone) {
+	public Gerente(String nome, String email, String telefone) {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 	}
 
-	public Funcionario(int id, String nome, String email, String telefone) {
+	public Gerente(int id, String nome, String email, String telefone) {
 		this(nome, email, telefone);
 		this.id=id;
 	}
@@ -49,7 +51,7 @@ public class Funcionario {
 
 	
 	public void exibir() {
-		System.out.println("Dados Funcionário: \n" + this);
+		System.out.println("Dados Gerente: \n" + this);
 	}	
 	
 	@Override

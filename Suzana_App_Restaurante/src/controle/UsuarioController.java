@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.RestauranteDao;
 import dao.UsuarioDao;
 import negocio.Usuario;
 
@@ -27,8 +28,12 @@ public class UsuarioController extends HttpServlet {
 		String senha = request.getParameter("senha");
 		Usuario usuario = UsuarioDao.obterUsuario(email, senha);	
 		
+//		request.setAttribute("usuario", UsuarioDao.obterUsuario(email, senha));
+		
+		
 		if(usuario != null) {
 			request.getSession().setAttribute("usuarioLogado", usuario);
+			request.setAttribute("restaurantes", RestauranteDao.obterLista());
 			request.getRequestDispatcher("main.jsp").forward(request, response);
 			
 		} else {
